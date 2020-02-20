@@ -7,5 +7,10 @@ Rails.application.routes.draw do
     end
   end
   resources :tags
+  resources :authors
+
+  get 'login' => 'author_sessions#new'
+  get 'logout' => 'author_sessions#destroy'
+  post 'login' => 'author_sessions#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
